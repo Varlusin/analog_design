@@ -1,0 +1,12 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+.DS_Store
+rsconnect/
+lib/
+_book/
+*.R
+*.Rproj
+*.bib
+*.txt
