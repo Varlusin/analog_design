@@ -2,7 +2,7 @@
 # ՄՕԿ Մետաղ օքսիդ կիսահաղորդիչ տրանզիստորներ։
 
 ```{r, echo=FALSE, out.width='100%', fig.align='center', fig.cap='...'}
-knitr::include_graphics("imige/mostex.jpg")
+knitr::include_graphics("imige/mosfet/mos_structure.svg")
 ```
 
 Նկարում պատկերված են **ՆՄՕԿ** և **ՊՄՕԿ** տրանզիստորների պարզեցված
@@ -24,7 +24,7 @@ knitr::include_graphics("imige/mostex.jpg")
 ## Շեմային «treshold» լարում։
 
 ```{r, echo=FALSE, out.width='100%', fig.align='center', fig.cap='...'}
-knitr::include_graphics("imige/th.png")
+knitr::include_graphics("imige/mosfet/threshold.svg")
 ```
 
 Դիտարկենք նկարում պատկերված արտաքին լարումներին միացված ՆՄՕԿ֊ը։ Երբ
