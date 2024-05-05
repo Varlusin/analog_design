@@ -1,11 +1,23 @@
 ---
 title: "ՎՈԼՏ֊ԱՄՊԵՐ ԲՆՈՒԹԱԳԻՐ"
-output: 
+output:
   flexdashboard::flex_dashboard:
-    orientation: columns
-    social: menu
-    source_code: embed
+    theme:
+      version: 4
+      bg: "#101010"
+      fg: "#FDF7F7" 
+      primary: "#ED79F9"
+      navbar-bg: "#3ADAC6"
+      base_font: 
+        google: Prompt
+      heading_font:
+        google: Sen
+      code_font:
+        google: 
+          family: JetBrains Mono
+          local: false
 ---
+
 
 ```{r setup, include=FALSE}
 library(ggplot2)
@@ -33,7 +45,7 @@ accumulate_by <- function(dat, var) {
 ### ՎԱԲ֊Ը 3D ՊԱՏԿԵՐՄԱՄԲ
 
 ```{r}
-df <- read.csv(url('https://github.com/Varlusin/analod_design/raw/main/sp_data/nvab3d.csv'))
+df <- read.csv(url('https://raw.githubusercontent.com/Varlusin/analog_design/master/sp_data//nvab3d.csv'))
 
 df<-df[2: 62]
 Vds <- seq(from = 0, to = 1.8, by = 0.03)
@@ -44,8 +56,9 @@ I <- data.matrix(df, rownames.force = NA)
 fig <- plot_ly(
   x = ~Vgs,
   y = ~Vds,
-  z = ~I)%>% add_surface()
-
+  z = ~I)%>% add_surface() %>%
+  layout( plot_bgcolor = "rgba(0,0,0,0)",
+          paper_bgcolor = "rgba(0,0,0,0)")
 fig
 
 ```
@@ -55,7 +68,7 @@ fig
 ### Ըմբիչի հոսանքը փական֊ակունք տարբեր լարումների համար։
 
 ```{r}
-df <- read.csv(url("https://github.com/Varlusin/analod_design/raw/main/sp_data/vabnmos.csv"))
+df <- read.csv(url("https://raw.githubusercontent.com/Varlusin/analog_design/master/sp_data//vabnmos.csv"))
 df <- df[c('vin', 'Vds', 'Iddrane', 'Idgate')]
 df$vin <- (round(df$vin*1000, digits = 0))/1000
 vec <- seq(from = 0, to = 1.8, by = 0.02)
@@ -79,7 +92,9 @@ fig <- fig %>% layout(legend=list(title=list(text='Vgs', x = 1, y = 0.5)),
   yaxis = list(
     title = 'ԸՄԲԻՉԻ ՀՈՍԱՆՔԸ։',
     zeroline = F
-  )
+  ),
+  plot_bgcolor = "rgba(0,0,0,0)",
+  paper_bgcolor = "rgba(0,0,0,0)"
 ) 
 fig <- fig %>% animation_opts(
   frame = 100, 
@@ -114,7 +129,9 @@ fig <- fig %>% layout(legend=list(title=list(text='Vds', x = 1, y = 0.5)),
   yaxis = list(
     title = 'ԸՄԲԻՉԻ ՀՈՍԱՆՔԸ։',
     zeroline = F
-  )
+  ),
+  plot_bgcolor = "rgba(0,0,0,0)",
+  paper_bgcolor = "rgba(0,0,0,0)"
 ) 
 fig <- fig %>% animation_opts(
   frame = 100, 
@@ -138,7 +155,7 @@ fig
 ### ՎԱԲ֊Ը 3D ՊԱՏԿԵՐՄԱՄԲ
 
 ```{r}
-df <- read.csv(url('https://github.com/Varlusin/analod_design/raw/main/sp_data/pvab3d.csv'))
+df <- read.csv(url('https://raw.githubusercontent.com/Varlusin/analog_design/master/sp_data//pvab3d.csv'))
 
 df<-df[2: 62]
 Vds <- seq(from = 0, to = 1.8, by = 0.03)
@@ -149,7 +166,9 @@ I <- data.matrix(df, rownames.force = NA)
 fig <- plot_ly(
   x = ~Vgs,
   y = ~Vds,
-  z = ~I)%>% add_surface()
+  z = ~I)%>% add_surface()%>%
+  layout( plot_bgcolor = "rgba(0,0,0,0)",
+          paper_bgcolor = "rgba(0,0,0,0)")
 
 fig
 ```
@@ -160,7 +179,7 @@ fig
 
 ```{r}
 rm(fig)
-df <- read.csv(url("https://github.com/Varlusin/analod_design/raw/main/sp_data/vabpmos.csv"))
+df <- read.csv(url("https://raw.githubusercontent.com/Varlusin/analog_design/master/sp_data//vabpmos.csv"))
 df <- df[c('vin', 'Vds', 'Iddrane', 'Idgate')]
 df$vin <- (round(df$vin*1000, digits = 0))/1000
 vec <- seq(from = 0, to = 1.8, by = 0.02)
@@ -184,7 +203,9 @@ fig <- fig %>% layout(legend=list(title=list(text='Vgs', x = 1, y = 0.5)),
   yaxis = list(
     title = 'ԸՄԲԻՉԻ ՀՈՍԱՆՔԸ։',
     zeroline = F
-  )
+  ),
+  plot_bgcolor = "rgba(0,0,0,0)",
+  paper_bgcolor = "rgba(0,0,0,0)"
 ) 
 fig <- fig %>% animation_opts(
   frame = 100, 
@@ -218,7 +239,9 @@ fig <- fig %>% layout(legend=list(title=list(text='Vds', x = 1, y = 0.5)),
   yaxis = list(
     title = 'ԸՄԲԻՉԻ ՀՈՍԱՆՔԸ։',
     zeroline = F
-  )
+  ),
+  plot_bgcolor = "rgba(0,0,0,0)",
+  paper_bgcolor = "rgba(0,0,0,0)"
 ) 
 fig <- fig %>% animation_opts(
   frame = 100, 
@@ -260,9 +283,9 @@ write filename.raw
 .endc
 .end
 ```
-### դսֆհհֆւհւի
-```{r}
-```
+### Սխեման։
+
+![](imige/vab_nmos_dash.svg)
 
 ## Column {.tabset}
 
@@ -288,7 +311,6 @@ write filename.raw
 .endc
 .end
 ```
-### guyguygh]
+### Սխեման։
 
-```{r}
-```
+![](imige/vab_pmos_dash.svg)

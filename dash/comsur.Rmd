@@ -59,14 +59,14 @@ write filename.raw
 
 ### Սխեման։
 
-![](imige/matplot2.png)
+![](imige/cs_nmos_dash.svg)
 
 ## Column {data-width="600"}
 
 ### Ելքի լարման և ուժեղացման գործակցի կախումը մուտքի լարումից։
 
 ```{r}
-df <- read.csv(url("https://github.com/Varlusin/analod_design/raw/main/sp_data/cs_dc_nf.csv"))
+df <- read.csv(url("https://raw.githubusercontent.com/Varlusin/analog_design/master/sp_data/cs_dc_nf.csv"))
 pal <- c("green", "blue", "magenta", "red", "goldenrod", "darkorange", "purple4") 
 pal <- setNames(pal, unique(df$rez))
 l <- list(
@@ -96,7 +96,8 @@ fig1 <- plot_ly()%>%
   
   layout(
           legend=l,
-          plot_bgcolor='#e5ecf6'
+          plot_bgcolor = "rgba(0,0,0,0)",
+          paper_bgcolor = "rgba(0,0,0,0)"
 
         )
 
@@ -108,10 +109,11 @@ fig2 <- plot_ly()%>%
                                   '<i>Vin</i>: %{x}'), 
             colors = pal, showlegend = F,
             line = list( width = 3), legendgroup = ~rez)%>%
-  layout( plot_bgcolor='#e5ecf6')
+  layout( plot_bgcolor = "rgba(0,0,0,0)",
+          paper_bgcolor = "rgba(0,0,0,0)")
 
 fig <- subplot( fig1, fig2, nrows = 2, margin = 0,  shareX = T, titleY = FALSE, titleX = FALSE)%>%
-layout(margin=list(l=0, r=0, t=0, b=0) , paper_bgcolor="#101010")
+layout(margin=list(l=0, r=0, t=0, b=0) , paper_bgcolor="rgba(0,0,0,0)")
 fig
 ```
 
@@ -126,7 +128,7 @@ fig
 .lib /usr/local/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt
 .GLOBAL GND 
 
-XM2 out in vdd vdd sky130_fd_pr__pfet_01v8 L=0.15 W='5 * 1 ' nf=1
+XM1 out in vdd vdd sky130_fd_pr__pfet_01v8 L=0.15 W='5 * 1 ' nf=1
 Rd  out GND 1k m=1
 
 Vin in GND 1.8
@@ -148,14 +150,14 @@ write filename.raw
 
 ### Սխեման։
 
-![](imige/matplot3.png)
+![](imige/cs_pmos_dash.svg)
 
 ## Column {data-width="600"}
 
 ### Ելքի լարման և ուժեղացման գործակցի կախումը մուտքի լարումից։
 
 ```{r}
-df <- read.csv(url("https://github.com/Varlusin/analod_design/raw/main/sp_data/cs_dc_pf.csv"))
+df <- read.csv(url("https://raw.githubusercontent.com/Varlusin/analog_design/master/sp_data/cs_dc_pf.csv"))
 pal <- c("green", "blue", "magenta", "red", "goldenrod", "darkorange", "purple4") 
 pal <- setNames(pal, unique(df$rez))
 l <- list(
@@ -185,7 +187,8 @@ fig1 <- plot_ly()%>%
   
   layout(
           legend=l,
-          plot_bgcolor='#e5ecf6'
+          plot_bgcolor = "rgba(0,0,0,0)",
+          paper_bgcolor = "rgba(0,0,0,0)"
 
         )
 
@@ -197,10 +200,11 @@ fig2 <- plot_ly()%>%
                                   '<i>Vin</i>: %{x}'), 
             colors = pal, showlegend = F,
             line = list( width = 3), legendgroup = ~rez)%>%
-  layout( plot_bgcolor='#e5ecf6')
+  layout( plot_bgcolor = "rgba(0,0,0,0)",
+          paper_bgcolor = "rgba(0,0,0,0)")
 
 fig <- subplot( fig1, fig2, nrows = 2, margin = 0,  shareX = T, titleY = FALSE, titleX = FALSE)%>%
-layout(margin=list(l=0, r=0, t=0, b=0) , paper_bgcolor="#101010")
+layout(margin=list(l=0, r=0, t=0, b=0) , paper_bgcolor="rgba(0,0,0,0)")
 fig
 
 

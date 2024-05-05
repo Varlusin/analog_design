@@ -169,9 +169,7 @@ editor_options:
 \end{equation}
 ```
 
-
 ## ՌԵԶԻՍՏՈՐՆԵՐԻ ԶՈՒԳԱՀԵՌ և ՀԱՋՈՐԴԱԿԱՆ ՄԻԱՑՈՒՄ։ 
-
 
 :::{.imige-center-100 }
 <img src="imige/index/parallel_and_series_connection.svg">
