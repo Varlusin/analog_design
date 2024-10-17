@@ -55,9 +55,6 @@ pre code {
   margin: 0;
 }
 
-/* .text-box {
-} */
-
 .imige-center, .imige-center-100  {
   text-align: center;
 }
@@ -69,7 +66,7 @@ pre code {
 }
 
 .imige-center-100 img  {
-  margin:0;
+  margin: 0;
   width: 100%;
 }
 
@@ -86,8 +83,8 @@ pre code {
   .imige-left, .imige-right {
     max-width: 90%;
     border: 0;
-    margin: 0;
     text-align: center;
+    margin: 0 auto;
     
   }
 
@@ -99,21 +96,3 @@ pre code {
   }
   
 }
-
-
-
-/* @media(max-width: 600px){
-  .imige-left, .imige-right {
-    max-width: 90%;
-    border: 0;
-    margin: 0;
-    text-align: center;
-    
-  }
-}
-
-@media(max-width: 600px){
-  .text-box {
-    display: block;
-  }
-} */

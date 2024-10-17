@@ -9,9 +9,3 @@ bookdown::gitbook:
       after: |
         <li><a href="https://github.com/Varlusin/analog_design.git" target="blank">Github</a></li>
     edit: https://github.com/Varlusin/analog_design/blob/master/%s
-    download: ["pdf", "epub"]
-bookdown::pdf_book:
-  latex_engine: xelatex
-  citation_package: natbib
-  keep_tex: yes
-bookdown::epub_book: default
