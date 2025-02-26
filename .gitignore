@@ -10,4 +10,6 @@ _book/
 *.Rproj
 *.bib
 *.txt
+*.tex
+*.html
 
